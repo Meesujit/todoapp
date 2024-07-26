@@ -69,16 +69,18 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         onReorder={setItem}
         axis='y'
       >
-        {todos.map((todo, index, item) => (
+        {todos.map((todo, index) => (
           <Reorder.Item
             item={item}
             key={item}>
 
               {/* CARD CONTENT  */}
+              <div className='todo-container'>
+
               <div
-                className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+                className={`${todo.isComplete ? 'todo-row complete' : 'todo-row'} shadow-md shadow-slate-700`}
                 key={index}
-              >
+                >
                 <div key={todo.id} onClick={() => completeTodo(todo.id)}>
                   <p className='font-mono text-lg' >
                   {todo.text}
@@ -87,15 +89,16 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
                 <div className='icons'>
                   <IoCloseCircleOutline
                     onClick={() => removeTodo(todo.id)}
-                    className='delete-icon'
-                  />
+                    className='icon-image '
+                    />
                   <CiEdit
                     onClick={() => setEdit({ id: todo.id, value: todo.text })}
-                    className='edit-icon'
-                  />
-                  <MdDownloading className='' onClick={handleGeneratePdf}/>
+                    className='icon-image'
+                    />
+                  <MdDownloading className='icon-image' onClick={handleGeneratePdf}/>
                 </div>
               </div>
+            </div>
           </Reorder.Item>
         ))}
       </Reorder.Group>

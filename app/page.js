@@ -23,7 +23,7 @@ const Home = async () => {
   </Link>
 </div>
   <div className=' text-4xl text-slate-300 font-san flex justify-center items-center'>
-    <h1>Document Project</h1>
+    <h1 className=''>Document Project</h1>
   </div>
 </div>
 

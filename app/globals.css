@@ -57,11 +57,11 @@
   }
 
   .todo-input{
-      @apply px-[14px] py-[16px] rounded-xl border-[3px] border-solid border-[#5d0cff] outline-none w-[320px] bg-transparent text-[#fff]
+      @apply px-[14px] py-[16px] rounded-xl border-[3px] border-solid border-[#5d0cff] outline-none w-[320px] bg-transparent text-[#fff] shadow-md shadow-slate-700
   }
 
   .todo-input::placeholder {
-    @apply text-[#e2e2e2]
+    @apply text-[#e2e2e2] 
   }
 
   .todo-button {
@@ -71,11 +71,11 @@
     rgba(155, 0, 250, 1) 100%
     );
     /* border-radius: 0 4px 4px 0; */
-  @apply p-[16px] border-none outline-none text-[#fff] capitalize rounded-xl
+  @apply p-[16px] border-none outline-none text-[#fff] capitalize rounded-xl shadow-md shadow-slate-700
   }
 
   .todo-input.edit{
-    @apply border-2 border-solid border-[#149fff]
+    @apply border-2 border-solid border-[#149fff] 
   }
   .todo-button.edit {
     background: linear-gradient(
@@ -87,7 +87,7 @@
   }
 
   .todo-container{
-    @apply flex flex-col relative
+    @apply flex flex-row justify-center flex-wrap gap-5
   }
 
   .todo-row{
@@ -97,19 +97,16 @@
       rgba(255, 84, 17, 1) 100%
     );
     width: 50%;
-    @apply flex justify-between align-middle my-5 mx-5 text-white p-4 rounded-[5px]
+    @apply flex flex-row justify-between align-middle my-5 mx-5 text-white p-4 rounded-[5px]
   }
   .icons {
-    @apply flex align-middle text-2xl cursor-pointer
+    @apply flex text-2xl cursor-pointer gap-2 !important
   }
   
-  .delete-icon {
-    @apply mr-1 text-white
+  .icon-image {
+    @apply mr-1 text-white rounded-full shadow-md shadow-slate-700
   }
   
-  .edit-icon {
-    @apply ml-1 text-white
-  }
 }
 
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import { Button } from './ui/Button';
+import { Input } from './ui/input';
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
@@ -32,7 +33,7 @@ function TodoForm(props) {
     <form onSubmit={handleSubmit} className='todo-form flex justify-center items-center gap-2'>
       {props.edit ? (
         <>
-          <input
+          <Input
             placeholder='Update your item'
             value={input}
             onChange={handleChange}
@@ -40,13 +41,13 @@ function TodoForm(props) {
             ref={inputRef}
             className='todo-input edit rounded-[5px]'
           />
-          <button onClick={handleSubmit} className='todo-button edit'>
+          <Button onClick={handleSubmit} className='todo-button edit'>
             Update
-          </button>
+          </Button>
         </>
       ) : (
         <>
-          <input
+          <Input
             placeholder='Add a todo'
             value={input}
             onChange={handleChange}
@@ -54,9 +55,9 @@ function TodoForm(props) {
             className='todo-input'
             ref={inputRef}
           />
-          <button onClick={handleSubmit} className='todo-button'>
+          <Button onClick={handleSubmit} className='todo-button'>
             Submit
-          </button>
+          </Button>
         </>
       )}
     </form>
